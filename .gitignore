@@ -1,0 +1,16 @@
+# Dependencies
+/node_modules
+/client/node_modules
+/server/node_modules
+
+# Build artifacts
+/dist
+/build
+
+# Environment variables
+.env
+.env.*
+!.env.example
+
+# OS files
+.DS_Store
