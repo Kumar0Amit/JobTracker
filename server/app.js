@@ -25,14 +25,32 @@ export const app = express();
 
 
 // Provide a fallback for local development
+// const allowedOrigins = [
+//   process.env.CLIENT_URL || "https://jobtracker-1-loaq.onrender.com"
+// ];
+
+// app.use(
+//   cors({
+//     origin: allowedOrigins,
+//     methods: ["GET", "POST", "PUT", "PATCH","DELETE"],
+//     credentials: true,
+//   })
+// );
 const allowedOrigins = [
-  process.env.CLIENT_URL || "https://jobtracker-1-loaq.onrender.com"
+  "https://jobtracker-1-loaq.onrender.com", // your frontend
+  "http://localhost:5173" // optional, for local dev
 ];
 
 app.use(
   cors({
-    origin: allowedOrigins,
-    methods: ["GET", "POST", "PUT", "PATCH","DELETE"],
+    origin: (origin, callback) => {
+      if (!origin || allowedOrigins.includes(origin)) {
+        callback(null, true);
+      } else {
+        callback(new Error("Not allowed by CORS"));
+      }
+    },
+    methods: ["GET", "POST", "PUT", "PATCH", "DELETE"],
     credentials: true,
   })
 );
