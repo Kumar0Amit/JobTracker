@@ -13,10 +13,10 @@ export const attachCookiesToResponse = (res, user) => {
 
   res.cookie("token", token, {
     httpOnly: true,
-    // secure: process.env.NODE_ENV === "production", // only https in prod
+    secure: process.env.NODE_ENV === "production", // only https in prod
     signed: false,
     expires: new Date(Date.now() + oneDay),
-    sameSite: "strict",
+    sameSite: "none",
   });
 };
 
