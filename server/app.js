@@ -5,6 +5,8 @@ import express from 'express';
 import cookieParser from 'cookie-parser';
 import morgan from 'morgan';
 import {connection} from './database/dbConnect.js';
+import path from "path";
+import { fileURLToPath } from "url";
 // middlewares
 import {notFoundMiddleware} from './middleware/notFoundMiddleware.js';
 import {errorHandlerMiddleware} from './middleware/errorHandlerMiddleware.js';
@@ -81,6 +83,19 @@ app.get('/api/v1', (req, res) => {
 app.use('/api/v1/jobs', [rateLimiter(), authenticateUser], jobRouter);
 app.use('/api/v1/users', [rateLimiter(), authenticateUser], userRouter);
 app.use('/api/v1/auth', authRouter);
+
+
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
+
+// Serve static files from React build
+app.use(express.static(path.join(__dirname, "dist")));
+
+// Fallback for React Router
+app.get("*", (req, res) => {
+  res.sendFile(path.join(__dirname, "dist", "index.html"));
+});
+
 
 //error handling
 app.use(notFoundMiddleware);
