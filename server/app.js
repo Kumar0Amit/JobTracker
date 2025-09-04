@@ -76,14 +76,14 @@ app.use('/api/v1/auth', authRouter);
 
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
-const distPath = path.join(__dirname, "../dist");
+const distPath = path.join(__dirname, 'dist');
 
-app.use(express.static(path.join(__dirname, 'build')));
-
+app.use(express.static(distPath));
 
 app.get('/{*splat}', (req, res) => {
-  res.sendFile(path.join(__dirname, 'build', 'index.html'));
+  res.sendFile(path.join(distPath, 'index.html'));
 });
+
 
 
 
