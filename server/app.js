@@ -26,7 +26,7 @@ export const app = express();
 
 // Provide a fallback for local development
 const allowedOrigins = [
-  process.env.FRONTEND_URL || "http://localhost:5173"
+  process.env.CLIENT_URL || "https://jobtracker-1-loaq.onrender.com"
 ];
 
 app.use(
