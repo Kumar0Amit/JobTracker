@@ -11,7 +11,7 @@ export const sendVerificationEmail = async (user) => {
   user.verificationTokenExpires = Date.now() + 60 * 60 * 1000; // 1 hour
 
   // Construct verification URL
-  const clientUrl = process.env.CLIENT_URL || 'http://localhost:5173';
+  const clientUrl = process.env.CLIENT_URL || 'https://jobtracker-1-loaq.onrender.com';
   const verifyUrl = `${clientUrl}/verify-email?token=${rawToken}&email=${user.email}`;
 
   // Build email content

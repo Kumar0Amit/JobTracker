@@ -61,11 +61,13 @@ export default function VerifyEmail() {
   useEffect(() => {
     const verify = async () => {
       try {
-        const res = await fetch("http://localhost:3000/api/v1/auth/verify-email?" + new URLSearchParams({
+        const API_BASE = import.meta.env.VITE_API_URL;
+
+        const res = await fetch(`${API_BASE}/auth/verify-email?` + new URLSearchParams({
           token,
           email,
         }));
-        
+
         console.log("Verifying:", token, email);
 
         const data = await res.json();
