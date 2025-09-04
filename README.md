@@ -135,24 +135,25 @@ npm install
 # Start the app
 npm run dev
 ```
-```markdown
----
 
-📜 License
+
+
+##📜 License
 
 MIT License
 
 This project is open-source and free to use under the MIT License.
-🙌 Credits
+
+##🙌 Credits
 
 Built with ❤️ by Amit
 GitHub: https://github.com/Kumar0Amit
 
-💻 Code
+##💻 Code
 # Start the app
 npm run dev
 
-🤝 Contributing
+##🤝 Contributing
 
 Contributions are welcome!
 
@@ -169,7 +170,7 @@ Open a Pull Request
 Follow Conventional Commits
  for consistent commit messages.
 
-📬 Contact
+##📬 Contact
 
 GitHub: https://github.com/Kumar0Amit
-```
+
