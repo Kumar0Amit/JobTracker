@@ -24,30 +24,30 @@
 
 ---
 
-## 🗂 Table of Contents
+## Table of Contents
 
-- [🚀 Live Demo](#🚀-live-demo)  
-- [✨ Features](#✨-features)  
-- [🛠 Tech Stack](#🛠-tech-stack)  
-- [📸 Screenshots](#📸-screenshots)  
-- [🧑‍💻 Getting Started](#🧑‍💻-getting-started)  
-- [📜 License](#📜-license)  
-- [🙌 Credits](#🙌-credits)  
-- [💻 Code](#💻-code)  
-- [🤝 Contributing](#🤝-contributing)  
-- [📬 Contact](#📬-contact)  
+- [Live Demo](#live-demo)  
+- [Features](#features)  
+- [Tech Stack](#tech-stack)  
+- [Screenshots](#screenshots)  
+- [Getting Started](#getting-started)  
+- [License](#license)  
+- [Credits](#credits)  
+- [Code](#code)  
+- [Contributing](#contributing)  
+- [Contact](#contact)  
 
 ---
 
-## 🚀 Live Demo
+## Live Demo
 
-[![Live Demo](https://img.shields.io/badge/Visit-Live_App-blueviolet)](https://jobtracker-1-loaq.onrender.com)
+👉 [Visit the live app](https://jobtracker-1-loaq.onrender.com)
 
 Use the demo login or register your own account to explore the features.
 
 ---
 
-## ✨ Features
+## Features
 
 - ✅ Add, edit, and delete job applications  
 - ✅ Track job status: pending, interview, offer, declined  
@@ -60,28 +60,28 @@ Use the demo login or register your own account to explore the features.
 
 ---
 
-## 🛠 Tech Stack
+## Tech Stack
 
 **Frontend**  
-- ![React](https://img.shields.io/badge/React-61DAFB?logo=react&logoColor=black) React (Vite)  
-- ![React Router](https://img.shields.io/badge/React%20Router-CA4245?logo=react-router&logoColor=white) React Router  
-- ![Styled Components](https://img.shields.io/badge/Styled_Components-DB7093?logo=styled-components&logoColor=white) Styled Components  
-- ![Recharts](https://img.shields.io/badge/Recharts-FF7300?logo=chart.js&logoColor=white) Recharts  
-- ![React Query](https://img.shields.io/badge/React_Query-FF4154?logo=react-query&logoColor=white) React Query  
+- React (Vite)  
+- React Router  
+- Styled Components  
+- Recharts  
+- React Query  
 
 **Backend**  
-- ![Node.js](https://img.shields.io/badge/Node.js-339933?logo=node.js&logoColor=white) Node.js + Express  
-- ![MongoDB](https://img.shields.io/badge/MongoDB-47A248?logo=mongodb&logoColor=white) MongoDB + Mongoose  
-- ![JWT](https://img.shields.io/badge/JWT-000000?logo=json-web-tokens&logoColor=white) JWT Authentication  
+- Node.js + Express  
+- MongoDB + Mongoose  
+- JWT Authentication  
 - RESTful API  
 
 **Deployment**  
-- ![Render](https://img.shields.io/badge/Render-EC008C?logo=render&logoColor=white) Render (Frontend + Backend)  
-- ![Cloudinary](https://img.shields.io/badge/Cloudinary-0C4DA2?logo=cloudinary&logoColor=white) Cloudinary  
+- Render (Frontend + Backend)  
+- Cloudinary (for avatar uploads)  
 
 ---
 
-## 📸 Screenshots
+## Screenshots
 
 | Screenshot | Description |
 |------------|-------------|
@@ -94,6 +94,27 @@ Use the demo login or register your own account to explore the features.
 | ![Screenshot 7](./screenshots/JOBSTATS.png) | Stats and charts |
 | ![Screenshot 8](./screenshots/JOBFORGOT.png) | Forgot password |
 
+
+---
+
+## Getting Started
+
+```bash
+# Clone the repo
+git clone https://github.com/Kumar0Amit/JobTracker.git
+
+# Install dependencies
+cd client
+npm install
+
+cd ../server
+npm install
+
+# Create .env files for both client and server
+
+# Start the app
+npm run dev
+
 ---
 
 ## 🧑‍💻 Getting Started
@@ -105,10 +126,17 @@ git clone https://github.com/Kumar0Amit/JobTracker.git
 # Install dependencies
 cd client
 npm install
+
 cd ../server
 npm install
 
 # Create .env files for both client and server
+
+# Start the app
+npm run dev
+```
+```markdown
+---
 
 📜 License
 
@@ -144,3 +172,4 @@ Follow Conventional Commits
 📬 Contact
 
 GitHub: https://github.com/Kumar0Amit
+```
