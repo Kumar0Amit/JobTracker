@@ -7,7 +7,7 @@
     "dev": "vite",
     "build": "vite build",
     "lint": "eslint .",
-    "postbuild": "cp public/_redirects dist/_redirects",
+    "postbuild": "copy public\\_redirects dist\\_redirects",
     "preview": "vite preview"
   },
   "dependencies": {
