@@ -6,6 +6,9 @@ import cookieParser from 'cookie-parser';
 // import morgan from 'morgan';
 import {connection} from './database/dbConnect.js';
 
+import path from "path";
+import { fileURLToPath } from "url";
+
 // middlewares
 import {notFoundMiddleware} from './middleware/notFoundMiddleware.js';
 import {errorHandlerMiddleware} from './middleware/errorHandlerMiddleware.js';
@@ -72,7 +75,15 @@ app.use('/api/v1/users', rateLimiter(), authenticateUser, userRouter);
 app.use('/api/v1/auth', authRouter);
 
 
+const __dirname = path.dirname(fileURLToPath(import.meta.url));
+const distPath = path.join(__dirname, "../dist");
 
+app.use(express.static(path.join(__dirname, 'build')));
+
+
+app.get('/{*splat}', (req, res) => {
+  res.sendFile(path.join(__dirname, 'build', 'index.html'));
+});
 
 
 
