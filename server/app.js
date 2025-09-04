@@ -3,10 +3,9 @@ import 'dotenv/config';
 import cors from 'cors';
 import express from 'express';
 import cookieParser from 'cookie-parser';
-import morgan from 'morgan';
+// import morgan from 'morgan';
 import {connection} from './database/dbConnect.js';
-import path from "path";
-import { fileURLToPath } from "url";
+
 // middlewares
 import {notFoundMiddleware} from './middleware/notFoundMiddleware.js';
 import {errorHandlerMiddleware} from './middleware/errorHandlerMiddleware.js';
@@ -26,18 +25,6 @@ cloudinary.config({
 export const app = express();
 
 
-// Provide a fallback for local development
-// const allowedOrigins = [
-//   process.env.CLIENT_URL || "https://jobtracker-1-loaq.onrender.com"
-// ];
-
-// app.use(
-//   cors({
-//     origin: allowedOrigins,
-//     methods: ["GET", "POST", "PUT", "PATCH","DELETE"],
-//     credentials: true,
-//   })
-// );
 const allowedOrigins = [
   "https://jobtracker-1-loaq.onrender.com", // your frontend
   "http://localhost:5173" // optional, for local dev
@@ -80,26 +67,22 @@ app.get('/api/v1', (req, res) => {
 });
 
 //routers
-app.use('/api/v1/jobs', [rateLimiter(), authenticateUser], jobRouter);
-app.use('/api/v1/users', [rateLimiter(), authenticateUser], userRouter);
+app.use('/api/v1/jobs', rateLimiter(), authenticateUser, jobRouter);
+app.use('/api/v1/users', rateLimiter(), authenticateUser, userRouter);
 app.use('/api/v1/auth', authRouter);
 
 
-const __filename = fileURLToPath(import.meta.url);
-const __dirname = path.dirname(__filename);
-
-// Serve static files from React build
-app.use(express.static(path.join(__dirname, "dist")));
-
-// Fallback for React Router
-app.get("*", (req, res) => {
-  res.sendFile(path.join(__dirname, "dist", "index.html"));
-});
 
 
-//error handling
+
+
+
+
+// Error handling (last)
 app.use(notFoundMiddleware);
 app.use(errorHandlerMiddleware);
+
+
 
 
 connection();
